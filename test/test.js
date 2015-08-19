@@ -77,7 +77,6 @@ describe("archive helpers", function(){
     it("should read urls from sites.txt", function (done){
       var urlArray = ["example1.com", "example2.com"];
       fs.writeFileSync(archive.paths.list, urlArray.join("\n"));
-
       archive.readListOfUrls(function(urls){
         expect(urls).to.deep.equal(urlArray);
         done();
@@ -110,8 +109,8 @@ describe("archive helpers", function(){
       var urlArray = ["example1.com", "example2.com\n"];
       fs.writeFileSync(archive.paths.list, urlArray.join("\n"));
 
-      archive.addUrlToList("someurl.com", function () {
-        archive.isUrlInList("someurl.com", function (is) {
+      archive.addUrlToList("ugabooga.com", function () {
+        archive.isUrlInList("ugabooga.com", function (is) {
           expect(is);
           done();
         });
@@ -139,7 +138,7 @@ describe("archive helpers", function(){
   });
 
   describe("#downloadUrls", function () {
-    it("should download all pending urls in the list", function (done) {
+    it.only("should download all pending urls in the list", function (done) {
       var urlArray = ["www.example.com", "www.google.com"];
       archive.downloadUrls(urlArray);
 
