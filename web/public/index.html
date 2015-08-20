@@ -2,11 +2,21 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <!-- add scripts just client side or server as well?
+  <script src = "basic-server.js"></script>
+  <script src = "http-helpers.js"></script>
+  <script src = "initialize.js"></script>
+  <script src = "request-handler.js"></script> -->
+  <!-- dependencies -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- scripts -->
+  <script src = "../app.js"></script>
 </head>
 <body>
   Enter a URL here:
-  <form method="POST">
-    <input type="input" name="url"></input>
+  <form method="POST" id="urlForm">
+    <input type="input" name="url" id="userUrl"></input>
+    <button type="submit" name="submit" id="submit"> Fetch me my daily paper!</button>
   </form>
 </body>
 </html>
