@@ -51,3 +51,6 @@ http.get(hostname, function(res){
   throw err;
 });
 */
+
+
+//call the downloadhelper on list of urls
