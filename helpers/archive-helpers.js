@@ -56,15 +56,13 @@ exports.isUrlInList = function(url, cb){
 exports.addUrlToList = function(url, cb){
   //user posts a url, if not in list (above) add it
   //how to append to the file
-
+  cb = cb || _.identity;
   console.log(url,typeof(url), "this is the url");
   fs.appendFile(exports.paths.list, url, function(err){
     if(err) throw err;
   })
-  console.log(exports.isUrlInList(url));
-  return cb();
-
-};
+  // return cb();
+  };
 
 exports.isUrlArchived = function(url, cb){
   // it is going to check after getting a true isURLinList
